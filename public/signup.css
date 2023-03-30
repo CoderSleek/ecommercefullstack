@@ -1,0 +1,91 @@
+*{
+	box-sizing: border-box;
+}
+
+html{
+	height: 100%;
+}
+
+body{
+	margin: 0px;
+	height: 100%;
+	background-color: yellow;
+	background-image: linear-gradient(to bottom right, blue, purple, deeppink, pink);
+	background-repeat:  none;
+	position: relative;
+}
+
+.error{
+	color:  red;
+	text-align: center;
+}
+
+.signup{
+	top: 50%;
+	left: 50%;
+	width: min-content;
+	transform: translate(-50%, -50%);
+	position: absolute;
+	padding: 11px;
+}
+
+.signup input {
+	margin-bottom: 6px;
+	line-height: 1.5rem;
+	text-indent: 5px;
+	border: 1px solid black;
+	border-radius: 5px;
+	box-shadow: none;
+	width: 300px;
+	text-align: center;
+}
+
+.signup--btn{
+	margin-top:  11px;
+	margin-left: 50%;
+	transform: translate(-50%);
+	line-height: 1.6rem;
+	padding: 3px 15px;
+	background-color: chartreuse;
+}
+.signup--btn:hover{
+	background-color: lightgreen;
+	border-radius: 7px;
+}
+
+.btn{
+	border: 1px solid black;
+	border-radius: 7px;
+	cursor: pointer;
+}
+
+.signup_text{
+	text-align: center;
+	color: white;
+	font-size: 2.0rem;
+	font-family: 'Segoe UI', sans-serif;
+	width: 100%;
+	display: block;
+	margin-bottom: 20px;
+	text-decoration: underline;
+}
+
+.changepagelink{
+	font-size:  1.8rem;
+	color: white;
+}
+
+.changepagelink:hover{
+	color: wheat;
+}
+
+section{
+	display: flex;
+	flex-direction: column;
+}
+
+section > p > a{
+	padding-top:  20px;
+	display: flex;
+	text-align: center;
+}

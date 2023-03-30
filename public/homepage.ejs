@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Homepage</title>
+	<link rel="stylesheet" href="./homepage.css" />
+	<script type="text/javascript" src="./homepage.js" defer></script>
+</head>
+<body>
+	<%- include("partials/header.ejs"); %>
+	<section class="productsection">
+		<button class="my-cart product-details-btn" id="cart-page">My Cart</button>
+		<span class="section--heading">Today's Great Deals for you</span>
+		<div class="productslist" id="section--productslist">
+		</div>
+		<div class="section--changePage">
+			<button class="section--load-more" id="section--load-previous">Previous Products</button>
+			<button class="section--load-more" id="section--load-more">Load More Products</button>
+		</div>
+	</section>
+	<modal id="product--modal" class="productModal hidden"></modal>
+</body>
+</html>

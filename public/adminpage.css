@@ -1,0 +1,238 @@
+*{
+    box-sizing: border-box;
+}
+html, body{
+    margin: 0px;
+    height: 100%;
+}
+
+.adminsection{
+    text-align: center;
+    margin-top: 12%;
+}
+
+.admin--heading{
+    font-size: 1.8em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: left;
+    margin-left: 4%;
+    margin-bottom: 11px;
+    display: block;
+}
+
+.changebtn{
+    appearance: button;
+    backface-visibility: hidden;
+    background-color: #405cf5;
+    border-radius: 6px;
+    border-width: 0;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+    font-size: 100%;
+    height: 44px;
+    line-height: 1.15;
+    outline: none;
+    overflow: hidden;
+    padding: 0 25px;
+    text-align: center;
+    text-transform: none;
+    transform: translateZ(0);
+    transition: all .2s,box-shadow .08s ease-in;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    flex-grow: 1;
+}
+
+.changebtn:disabled {
+  cursor: default;
+  background-color: #758aff;
+}
+
+.changebtn:active {
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+
+.changebtn:hover{
+    background-color: #2343f8;
+}
+
+.hidden {
+    display: none;
+}
+
+.adminmodal{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100vw;
+    z-index: 999;
+    /* box-shadow: 0 0 0 max(100vh, 100vw) rgba(0, 0, 0, .4); */
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal--content{
+    min-width: 450px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    padding: 40px;
+    font-family: Helvetica, sans-serif;
+    border-radius: 10px;
+    border: 0.5px solid black;
+    font-size: 1.2em;
+}
+
+.modal--product{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 11px;
+}
+
+.modal--product > input{
+    border: 0.5px solid black;
+    border-radius: 4px;
+    line-height: 1.2em;
+    font-size: 0.9em;
+    text-indent: 5px;
+    padding: 3px initial;
+}
+input[name=product-image]{
+    width: 188px;
+    font-size: 13px;
+    line-height: initial;
+    border: none;
+}
+.modal--submit{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.modal--submit > button{
+    padding: 10px 10px;
+    font-size: 16px;
+    line-height: initial;
+    flex-grow: 0;
+    height: auto;
+}
+.modal--close {
+    align-items: center;
+    background-clip: padding-box;
+    background-color: #fa6400;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    margin: 0;
+    position: absolute;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+    position: absolute;
+    top: 2px;
+    right: 6px;
+}
+
+.modal--close:hover,
+.modal--close:focus {
+  background-color: #fb8332;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.modal--close:hover {
+  transform: translateY(-1px);
+}
+
+.modal--close:active {
+  background-color: #c85000;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);
+}
+.productslist{
+    display: flex;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: inherit;
+    margin-bottom: 16px;
+
+}
+
+.singleProduct{
+    border-radius: 6px;
+    border: 0.5px solid black;
+    width: 15%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 290px;
+    position: relative;
+    padding: 0px 10px;
+    background-color: white;
+}
+
+.product-title{
+    font-weight: bold;
+    font-size: 1.2em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+    display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 2;
+   line-height: 1.2em;
+   max-height: 2.4em;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.section--load-more{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.productsection{
+    text-align: center;
+    margin-top: 12%;
+}
+.product-image{
+    height: 150px;
+    max-width: calc(100% - 2px);
+    margin: 14px 0px;
+}
+.section--load-more{
+    margin-left: auto;
+    margin-right: auto;
+}
+.product--btn-container{
+    padding: 0px 2px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 3px;
+    justify-content: stretch;
+    align-items: stretch;
+}
+
+.delete{
+    background-color: crimson;
+}

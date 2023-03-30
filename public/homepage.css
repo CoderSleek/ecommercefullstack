@@ -1,0 +1,254 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0px;
+    position: relative;
+    background-color: #EAEDED;
+}
+
+.product-image{
+    height: 150px;
+    max-width: calc(100% - 2px);
+    margin: 14px 0px;
+}
+
+.productslist{
+    display: flex;
+}
+
+.singleProduct{
+    border-radius: 6px;
+    border: 0.5px solid black;
+    width: 15%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 290px;
+    position: relative;
+    padding: 0px 10px;
+    background-color: white;
+}
+
+.product-title{
+    font-weight: bold;
+    font-size: 1.2em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+    display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 2;
+   line-height: 1.2em;
+   max-height: 2.4em;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.product-details-btn, .section--load-more, .product-add-cart{
+    appearance: button;
+    backface-visibility: hidden;
+    background-color: #405cf5;
+    border-radius: 6px;
+    border-width: 0;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+    font-size: 100%;
+    height: 44px;
+    line-height: 1.15;
+    outline: none;
+    overflow: hidden;
+    padding: 0 25px;
+    text-align: center;
+    text-transform: none;
+    transform: translateZ(0);
+    transition: all .2s,box-shadow .08s ease-in;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    flex-grow: 1;
+}
+
+.product-details-btn:disabled, .section--load-more:disabled {
+  cursor: default;
+  background-color: #758aff;
+}
+
+.product-details-btn:focus, .section--load-more:focus {
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+
+.product-details-btn:hover, .section--load-more:hover{
+    background-color: #2343f8;
+}
+
+.hidden {
+    display: none;
+}
+
+.productModal{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100vw;
+    z-index: 999;
+    /* box-shadow: 0 0 0 max(100vh, 100vw) rgba(0, 0, 0, .4); */
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal--content{
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Helvetica, sans-serif;
+    border-radius: 10px;
+    border: 0.5px solid black;
+}
+
+.modal--image{
+    height: 200px;
+    margin: 20px 0px;
+}
+
+.modal--close {
+    align-items: center;
+    background-clip: padding-box;
+    background-color: #fa6400;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    margin: 0;
+    position: absolute;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+    position: absolute;
+    top: 2px;
+    right: 6px;
+}
+
+.modal--close:hover,
+.modal--close:focus {
+  background-color: #fb8332;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.modal--close:hover {
+  transform: translateY(-1px);
+}
+
+.modal--close:active {
+  background-color: #c85000;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);
+}
+
+.modal--title{
+    font-size: 1.3em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    width: 80%;
+}
+
+.modal--type{
+    font-size: 1.1em;
+    font-style: italic;
+}
+
+.modal--cost{
+    font-weight: bold;
+}
+
+.modal--description{
+    margin-top: 11px;
+    font-size: 0.8em;
+    padding: 6px;
+    text-align: justify;
+}
+
+.section--load-more{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.productsection{
+    text-align: center;
+    margin-top: 12%;
+}
+
+.section--heading{
+    font-size: 1.8em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: left;
+    margin-left: 4%;
+    margin-bottom: 11px;
+    display: block;
+}
+
+.productslist{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: inherit;
+    margin-bottom: 16px;
+}
+
+.product-add-cart{
+    color: black;
+    background-color: whitesmoke;
+}
+
+.product-add-cart:hover{
+    background-color: rgb(221, 219, 219);
+}
+
+.product--btn-container{
+    padding: 0px 2px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 3px;
+    justify-content: stretch;
+    align-items: stretch;
+}
+
+.my-cart{
+    float: right;
+    transform: translate(-50px, -10px);
+}
+
+.inc-btn{
+    background-color: darkgreen;
+    color: whitesmoke;
+    border: none;
+    border-radius: 3px;
+    padding: 3px;
+    margin-left: 5px;
+}
+
+.dlt{
+    margin-top: 10px;
+    flex-grow: 0;
+    height: 33px;
+}

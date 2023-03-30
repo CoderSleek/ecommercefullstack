@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign-up Page</title>
+	<link rel="stylesheet" href="./signup.css" >
+</head>
+<body>
+	<% if(error){ %>
+		<h1 class="error"><%= error %></h1>
+	<% } %>
+	<section class="signup">
+		<form method="POST" action="signup">
+			<span class="signup_text">Signup</span>
+			<input type="text" name="username" placeholder="Enter your username"><br>
+			<input type="password" name="password" placeholder="Enter your password"><br>
+			<input type="password" name="confirm-password" placeholder="confirm your password"><br>
+			<button type="submit" class="signup--btn btn">Submit Information</button>
+		</form>
+		<p><a href="/login" class="changepagelink">Click here to move to login page</a></p>
+	</section>
+</body>
+</html>

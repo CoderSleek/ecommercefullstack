@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin</title>
+	<link rel="stylesheet" href="./adminpage.css">
+	<script type="text/javascript" src="./adminpage.js" defer></script>
+</head>
+<body>
+	<%- include("partials/header.ejs"); %>
+	<section class="adminsection">
+        <button id="addproduct" class="changebtn">Add New Product</button>
+		<span class="admin--heading">What's new today</span>
+		<div class="productslist" id="section--productslist">
+		</div>
+        <div class="section--changePage">
+			<button class="section--load-more changebtn" id="section--load-previous">Previous Products</button>
+			<button class="section--load-more changebtn" id="section--load-more">Load More Products</button>
+		</div>
+	</section>
+    <modal id="admin--modal" class="adminmodal hidden"></modal>
+</body>
+</html>

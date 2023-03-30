@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+	<link rel="stylesheet" href="./signup.css" >
+</head>
+<body>
+	<h1 class="error">
+		<%= error ? error : "" %>
+	</h1>
+	<section class="signup">
+		<form method="POST">
+			<span class="signup_text">Log in your account</span>
+			<input type="text" name="username" placeholder="Enter your username"><br>
+			<input type="password" name="password" placeholder="Enter your password"><br>
+			<button type="submit" class="signup--btn btn" formaction="/login">Log in</button>
+			<button type="submit" class="signup--btn btn" formaction="/adminlogin">Admin Login</button>
+		</form>
+		<form method="GET" action="/forgotpassword">
+			<button type="submit" class="signup--btn btn">Forgot Password</button>
+		</form>
+		<p><a href="/signup" class="changepagelink">Click here to move to signup page</a></p>
+	</section>
+</body>
+</html>
